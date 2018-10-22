@@ -69,8 +69,8 @@ class App extends Component {
           </div>
         </form>
 
-        <h3>勝者を選ぶ準備ができていますか？</h3>
-        <button onClick={this.onClick} className='PickUp'>勝者を選ぶ</button>
+        <h3>当選者を選ぶ準備はできていますか？</h3>
+        <button onClick={this.onClick} className='PickUp'>当選者を選ぶ</button>
         <div className='Owner'>
           <p>オーナーアドレス</p>
           <p>{ this.state.manager }</p>
