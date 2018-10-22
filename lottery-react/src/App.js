@@ -50,34 +50,31 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Lottery Contract</h1>
+      <div className='Content'>
+        <h1>宝くじ</h1>
         <p>
-          This contract is managed by { this.state.manager }.
-          There are currently  {this.state.players.length} people entered,
-          competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
+          現在{this.state.players.length}人が参加し,
+          当選者は{web3.utils.fromWei(this.state.balance, 'ether')}ETHを獲得することができます!
         </p>
 
-        <hr />
         <form onSubmit={this.onSubmit}>
-          <h2>Want to try your luck?</h2>
+          <h3>運だめしをしてみますか?</h3>
           <div>
-            <label>Amount of ether to enter</label>
+            <label>料金を支払いエントリーしてください！</label>
+            <button className='Entry'>参加する</button>
             <input
               value={this.state.value}
               onChange={event => this.setState({ value: event.target.value })}
             />
           </div>
-          <button>Enter</button>
         </form>
 
-        <hr />
-
-        <h4>Ready to pick a winner?</h4>
-        <button onClick={this.onClick}>Pick a winner!</button>
-
-        <hr />
-
+        <h3>勝者を選ぶ準備ができていますか？</h3>
+        <button onClick={this.onClick} className='PickUp'>勝者を選ぶ</button>
+        <div className='Owner'>
+          <p>オーナーアドレス</p>
+          <p>{ this.state.manager }</p>
+        </div>
         <p>{this.state.message}</p>
       </div>
     );
