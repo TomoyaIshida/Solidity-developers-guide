@@ -1,4 +1,4 @@
-Lottert Dapps
+Lottery Dapps
 ====
 
 <img width="1028" alt="lotterydapps" src="https://user-images.githubusercontent.com/29084519/47326181-83daca00-d6a2-11e8-8300-3e06d8398b4b.png">
@@ -13,4 +13,5 @@ The design is my original.
 
 `$ npm start`
 
-If you don't have metamask installed please install it with chrome web store.
+1. If you don't have metamask installed please install it with chrome web store.Then connect to the Rinkeby test network and obtain the test ETH.
+2. Please write metamask mnemonic and rinkeby test network address in lottery/deploy.js.
