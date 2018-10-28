@@ -13,7 +13,7 @@ class CampaignNew extends Component {
     loading: false
   };
 
-  onSubmit = async (event) => {
+  onSubmit = async event => {
     event.preventDefault();
 
     this.setState({ loading: true, errorMessage: ''  });
@@ -30,7 +30,7 @@ class CampaignNew extends Component {
       this.setState({ errorMessage: err.message });
     }
 
-    this.setState({ loading: false })
+    this.setState({ loading: false });
   };
 
   render() {
