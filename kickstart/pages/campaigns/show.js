@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Layout from '../../components/Layout';
 import Campaign from '../../ethereum/campaign';
 
+import { Card } from 'semantic-ui-react';
+
 class CampaignShow extends Component {
   static async getInitialProps(props) {
     const campaign = Campaign(props.query.address);
@@ -17,10 +19,32 @@ class CampaignShow extends Component {
     };
   }
 
+  renderCards() {
+    const {
+      balance,
+      manager,
+      minimumContribution,
+      requestCount,
+      approversCount
+    }= this.props;
+
+    const items = [
+      {
+        header: manager,
+        meta: 'Address of Manager',
+        description: 'The manager created this campaign and can create requests to wihtdraw money',
+        style: { overflowWrap: 'break-word' }
+      }
+    ];
+
+    return <Card.Group items={items} />;
+  }
+
   render () {
     return (
       <Layout>
         <h3>Campaign Show</h3>
+        {this.renderCards()}
       </Layout>
     );
   }
