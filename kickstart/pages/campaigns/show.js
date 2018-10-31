@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Card } from 'semantic-ui-react';
 import Layout from '../../components/Layout';
 import Campaign from '../../ethereum/campaign';
 import web3 from '../../ethereum/web3';
-
-import { Card } from 'semantic-ui-react';
+import ContributeForm from '../../components/ContributeForm';
 
 class CampaignShow extends Component {
   static async getInitialProps(props) {
@@ -14,7 +14,7 @@ class CampaignShow extends Component {
     return {
       minimumContribution: summary[0],
       balance: summary[1],
-      requestCount: summary[2],
+      requestsCount: summary[2],
       approversCount: summary[3],
       manager: summary[4]
     };
@@ -25,7 +25,7 @@ class CampaignShow extends Component {
       balance,
       manager,
       minimumContribution,
-      requestCount,
+      requestsCount,
       approversCount
     }= this.props;
 
@@ -33,7 +33,7 @@ class CampaignShow extends Component {
       {
         header: manager,
         meta: 'Address of Manager',
-        description: 'The manager created this campaign and can create requests to wihtdraw money',
+        description: 'The manager created this campaign and can create requests to withdraw money',
         style: { overflowWrap: 'break-word' }
       },
       {
@@ -42,7 +42,7 @@ class CampaignShow extends Component {
         description: 'You must contribute at least this much wei to become an apporover'
       },
       {
-        header: requestCount,
+        header: requestsCount,
         meta: 'Number of Requests',
         description: 'A request tries to withdraw money from the contract. Requests must be approved by approvers'
       },
@@ -66,6 +66,7 @@ class CampaignShow extends Component {
       <Layout>
         <h3>Campaign Show</h3>
         {this.renderCards()}
+        <ContributeForm />
       </Layout>
     );
   }
