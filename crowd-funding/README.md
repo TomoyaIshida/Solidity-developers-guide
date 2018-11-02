@@ -17,4 +17,4 @@ I developed Lottery Dapps with Ethereum and React.js it with reference to Ethere
 `$ npm start`
 
 1. If you don't have metamask installed please install it with chrome web store.Then connect to the Rinkeby test network and obtain the test ETH.
-2. Please write metamask mnemonic and rinkeby test network address in Ethereum/web3.js.
+2. Please write rinkeby test network address in Ethereum/web3.js.
